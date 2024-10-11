@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packet Data</title>
+</head>
+<body>
+    <h1>Captured Packets</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Source IP</th>
+            <th>Destination IP</th>
+            <th>Source Port</th>
+            <th>Destination Port</th>
+            <th>Protocol</th>
+            <th>Length</th>
+            <th>Raw Data</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for packet in packets %}
+        <tr>
+            <td>{{ packet['id'] }}</td>
+            <td>{{ packet['src_ip'] }}</td>
+            <td>{{ packet['dst_ip'] }}</td>
+            <td>{{ packet['src_port'] }}</td>
+            <td>{{ packet['dst_port'] }}</td>
+            <td>{{ packet['protocol'] }}</td>
+            <td>{{ packet['length'] }}</td>
+            <td>{{ packet['raw_data'] }}</td>
+            <td>{{ packet['timestamp'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
